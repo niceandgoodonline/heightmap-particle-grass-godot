@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvp3n6o1caevp"]
+
+[ext_resource type="Script" path="res://WanderingGrassParticle/FoliageMapGenerator/FoliageMapGenerator.gd" id="1_6xnja"]
+[ext_resource type="Texture2D" uid="uid://10r4pxs0r666" path="res://terrain/splat.png" id="2_b6cdk"]
+
+[node name="FoliageMapGenerator" type="Node"]
+script = ExtResource("1_6xnja")
+GenerateMaps = true
+SavePath = "res://WanderingGrassParticle/FoliageMapGenerator/Image"
+terrainSplatmap = ExtResource("2_b6cdk")
+startingGreenValue = 1.0
+loopDecrementValue = 0.025

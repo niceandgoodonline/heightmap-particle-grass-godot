@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0bhxlq4w46ms"]
+
+[ext_resource type="Material" uid="uid://djc6xrgnewf8j" path="res://WanderingGrassParticle/ZylannDemo/HighQuality/ppm/hqCoreGrassPPM.res" id="2_g7je6"]
+[ext_resource type="ArrayMesh" uid="uid://oqe18bn1o86r" path="res://WanderingGrassParticle/Mesh/grasspatchA-140tri.obj" id="3_bhd7h"]
+
+[node name="core" type="GPUParticles3D"]
+extra_cull_margin = 64.0
+amount = 16384
+lifetime = 0.01
+explosiveness = 1.0
+process_material = ExtResource("2_g7je6")
+draw_pass_1 = ExtResource("3_bhd7h")

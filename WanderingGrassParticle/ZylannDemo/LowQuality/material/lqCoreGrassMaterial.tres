@@ -1,0 +1,36 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b74bejva08fp8"]
+
+[ext_resource type="Shader" path="res://WanderingGrassParticle/Shader/Grass3DGlobalWind-Cull-Disabled.gdshader" id="1_b4s6l"]
+[ext_resource type="Texture2D" uid="uid://ti4ieq12jgnl" path="res://WanderingGrassParticle/Texture/GlobalWindNoise.tres" id="2_5xj5s"]
+[ext_resource type="Texture2D" uid="uid://bs72ve3figxl6" path="res://WanderingGrassParticle/Texture/GlobalWindVariation.tres" id="3_kibug"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_b4s6l")
+shader_parameter/ColorRampOffset = 0.07
+shader_parameter/BaseColor = Color(0.25098, 0.478431, 0.2, 1)
+shader_parameter/TopColor = Color(0.333333, 0.662745, 0.286275, 1)
+shader_parameter/WindColor = Color(0.733333, 0.862745, 0.278431, 1)
+shader_parameter/WindColorStrength = 0.785
+shader_parameter/GlobalWindVariationStrength = 1.0
+shader_parameter/GlobalHorizontalDisplacementDamp = 0.803
+shader_parameter/GlobalVerticalDisplacementDamp = 0.691
+shader_parameter/GlobalWindPowerDamp = 0.209
+shader_parameter/WindDirection = Vector2(1, -5)
+shader_parameter/GlobalWindUVTiling = Vector2(0.03, 0.12)
+shader_parameter/GlobalWindSpeed = 2.306
+shader_parameter/GlobalWindSpeedMagnitude = 0.02
+shader_parameter/GlobalWindStrength = 10.0
+shader_parameter/GlobalWindVariationDirection = Vector2(-0.5, 3)
+shader_parameter/GlobalWindVariationUVTiling = Vector2(0.1, 1)
+shader_parameter/GlobalWindNoise = ExtResource("2_5xj5s")
+shader_parameter/WindVariationNoise = ExtResource("3_kibug")
+shader_parameter/LocalWindRate = 4.365
+shader_parameter/LocalWindStrength = 0.106
+shader_parameter/PlayerPosition = Vector3(0, 0, 0)
+shader_parameter/fadeOffset = Vector2(20, 20)
+shader_parameter/particleSystemOffset = Vector2(0, 0)
+shader_parameter/PlayerDisplacementAmount = 0.5
+shader_parameter/PlayerRadius = 1.0
+shader_parameter/PlayerDisplacementMulitplierY = 0.242
+shader_parameter/PlayerDisplacementMulitplierXZ = -0.652

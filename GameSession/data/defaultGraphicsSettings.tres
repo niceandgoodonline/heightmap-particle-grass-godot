@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GraphicsSettingsDataResource" load_steps=2 format=3 uid="uid://bt42rv1h8bdc8"]
+
+[ext_resource type="Script" path="res://GameSession/GraphicSettingsDataResource.gd" id="1_hydjr"]
+
+[resource]
+script = ExtResource("1_hydjr")
+particleQuality = 2
+coreGrassQuality = 3
+distantGrassQuality = 3
+outlinePostEffectOn = true
+pointillismPostEffectOn = true
+paperPostEffectOn = true

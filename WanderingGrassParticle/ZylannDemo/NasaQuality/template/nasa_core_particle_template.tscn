@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq0iixva34isc"]
+
+[ext_resource type="Material" uid="uid://31j7rnkr5oev" path="res://WanderingGrassParticle/ZylannDemo/NasaQuality/material/nasaCoreGrassMaterial.tres" id="1_lvxvq"]
+[ext_resource type="Material" uid="uid://c6h425ljofv7n" path="res://WanderingGrassParticle/ZylannDemo/NasaQuality/ppm/nasaCoreGrassPPM.res" id="2_sdjr0"]
+[ext_resource type="ArrayMesh" uid="uid://oqe18bn1o86r" path="res://WanderingGrassParticle/Mesh/grasspatchA-140tri.obj" id="3_2fw7f"]
+
+[node name="core" type="GPUParticles3D"]
+material_override = ExtResource("1_lvxvq")
+cast_shadow = 0
+extra_cull_margin = 64.0
+amount = 65536
+lifetime = 0.01
+explosiveness = 1.0
+process_material = ExtResource("2_sdjr0")
+draw_pass_1 = ExtResource("3_2fw7f")

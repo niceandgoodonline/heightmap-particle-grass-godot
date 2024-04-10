@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4w3ucag1k3un"]
+
+[ext_resource type="Script" path="res://WanderingGrassParticle/GrassParticleManager.gd" id="1_ds0fd"]
+[ext_resource type="Material" uid="uid://b74bejva08fp8" path="res://WanderingGrassParticle/ZylannDemo/LowQuality/material/lqCoreGrassMaterial.tres" id="2_2xv14"]
+[ext_resource type="PackedScene" uid="uid://cm2cpdyyu6cdw" path="res://WanderingGrassParticle/ZylannDemo/LowQuality/template/lq_core_particle_template.tscn" id="2_8w6ax"]
+[ext_resource type="Material" uid="uid://dnnvq3xxa0ab6" path="res://WanderingGrassParticle/ZylannDemo/LowQuality/ppm/lqCoreGrassPPM.res" id="3_7osvc"]
+
+[node name="lqCore" type="Node3D"]
+script = ExtResource("1_ds0fd")
+grassParticleTemplate = ExtResource("2_8w6ax")
+grassMaterialTemplate = ExtResource("2_2xv14")
+grassPPM = ExtResource("3_7osvc")
+fadeDistance = Vector2(25, 25)
+grassSpacing = 0.0

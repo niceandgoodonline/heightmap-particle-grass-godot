@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://hloc7bcwxt86"]
+
+[ext_resource type="Material" uid="uid://bmfsab4sywel5" path="res://WanderingGrassParticle/ZylannDemo/NasaQuality/material/nasaDistantGrassMaterial.res" id="1_jix2s"]
+[ext_resource type="Material" uid="uid://csqfxqiatbc8e" path="res://WanderingGrassParticle/ZylannDemo/NasaQuality/ppm/nasaDistantGrassPPM.res" id="2_7l77y"]
+[ext_resource type="ArrayMesh" uid="uid://s2kavglnaj0v" path="res://WanderingGrassParticle/Mesh/grasspatchA-40-tri.obj" id="3_388xm"]
+
+[node name="distant" type="GPUParticles3D"]
+material_override = ExtResource("1_jix2s")
+cast_shadow = 0
+extra_cull_margin = 70.0
+amount = 65536
+lifetime = 0.01
+explosiveness = 1.0
+process_material = ExtResource("2_7l77y")
+draw_pass_1 = ExtResource("3_388xm")

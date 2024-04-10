@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvveils0iec8i"]
+
+[ext_resource type="Script" path="res://WanderingGrassParticle/GrassParticleManager.gd" id="1_vadqe"]
+[ext_resource type="Material" uid="uid://bmfsab4sywel5" path="res://WanderingGrassParticle/ZylannDemo/NasaQuality/material/nasaDistantGrassMaterial.res" id="2_6p8q7"]
+[ext_resource type="PackedScene" uid="uid://hloc7bcwxt86" path="res://WanderingGrassParticle/ZylannDemo/NasaQuality/template/nasa_distant_particle_template.tscn" id="2_kkkf8"]
+[ext_resource type="Material" uid="uid://csqfxqiatbc8e" path="res://WanderingGrassParticle/ZylannDemo/NasaQuality/ppm/nasaDistantGrassPPM.res" id="3_b3f5p"]
+
+[node name="nasaDistant" type="Node3D"]
+script = ExtResource("1_vadqe")
+grassParticleTemplate = ExtResource("2_kkkf8")
+grassMaterialTemplate = ExtResource("2_6p8q7")
+grassPPM = ExtResource("3_b3f5p")
+isCoreGrass = false
+grassSpacing = 130.0

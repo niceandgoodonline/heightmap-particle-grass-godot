@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://oegm4osy282j"]
+
+[ext_resource type="Material" uid="uid://bwaewjmbmj4nq" path="res://WanderingGrassParticle/ZylannDemo/VerdantQuality/material/verdantDistantGrassMaterial.res" id="1_jdu74"]
+[ext_resource type="Material" uid="uid://b5ufwbbgyqkj3" path="res://WanderingGrassParticle/ZylannDemo/VerdantQuality/ppm/verdantDistantGrassPPM.res" id="2_qeygc"]
+[ext_resource type="ArrayMesh" uid="uid://s2kavglnaj0v" path="res://WanderingGrassParticle/Mesh/grasspatchA-40-tri.obj" id="3_ww112"]
+
+[node name="distant" type="GPUParticles3D"]
+material_override = ExtResource("1_jdu74")
+cast_shadow = 0
+extra_cull_margin = 70.0
+amount = 65536
+lifetime = 0.01
+explosiveness = 1.0
+process_material = ExtResource("2_qeygc")
+draw_pass_1 = ExtResource("3_ww112")

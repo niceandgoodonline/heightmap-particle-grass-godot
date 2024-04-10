@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://n8vrmlefl5rb"]
+
+[ext_resource type="Script" path="res://WanderingGrassParticle/GrassParticleManager.gd" id="1_r56yx"]
+[ext_resource type="PackedScene" uid="uid://oegm4osy282j" path="res://WanderingGrassParticle/ZylannDemo/VerdantQuality/template/verdant_distant_particle_template.tscn" id="2_gjd0e"]
+[ext_resource type="Material" uid="uid://bwaewjmbmj4nq" path="res://WanderingGrassParticle/ZylannDemo/VerdantQuality/material/verdantDistantGrassMaterial.res" id="3_si11j"]
+[ext_resource type="Material" uid="uid://b5ufwbbgyqkj3" path="res://WanderingGrassParticle/ZylannDemo/VerdantQuality/ppm/verdantDistantGrassPPM.res" id="4_uoiyx"]
+
+[node name="verdantDistant" type="Node3D"]
+script = ExtResource("1_r56yx")
+grassParticleTemplate = ExtResource("2_gjd0e")
+grassMaterialTemplate = ExtResource("3_si11j")
+grassPPM = ExtResource("4_uoiyx")
+isCoreGrass = false
+grassSpacing = 150.0

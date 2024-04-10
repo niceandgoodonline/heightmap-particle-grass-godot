@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bea51iokld0wh"]
+
+[ext_resource type="Material" uid="uid://c8dcileiehnvn" path="res://WanderingGrassParticle/ZylannDemo/VerdantQuality/material/verdantCoreGrassMaterial.tres" id="1_6tejt"]
+[ext_resource type="Material" uid="uid://duq0t54s4pohf" path="res://WanderingGrassParticle/ZylannDemo/VerdantQuality/ppm/verdantCoreGrassPPM.res" id="2_ipoy2"]
+[ext_resource type="ArrayMesh" uid="uid://oqe18bn1o86r" path="res://WanderingGrassParticle/Mesh/grasspatchA-140tri.obj" id="3_m1wut"]
+
+[node name="core" type="GPUParticles3D"]
+material_override = ExtResource("1_6tejt")
+cast_shadow = 0
+extra_cull_margin = 64.0
+amount = 65536
+lifetime = 0.01
+explosiveness = 1.0
+process_material = ExtResource("2_ipoy2")
+draw_pass_1 = ExtResource("3_m1wut")
