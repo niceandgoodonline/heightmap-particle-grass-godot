@@ -10,5 +10,5 @@ script = ExtResource("1_ds0fd")
 grassParticleTemplate = ExtResource("2_8w6ax")
 grassMaterialTemplate = ExtResource("2_2xv14")
 grassPPM = ExtResource("3_7osvc")
-fadeDistance = Vector2(25, 25)
 grassSpacing = 0.0
+fadeDistance = Vector2(25, 25)

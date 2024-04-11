@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bs72ve3figxl6" path="res://WanderingGrassParticle/Texture/GlobalWindVariation.tres" id="3_kibug"]
 
 [resource]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_b4s6l")
 shader_parameter/ColorRampOffset = 0.07
@@ -28,7 +29,7 @@ shader_parameter/WindVariationNoise = ExtResource("3_kibug")
 shader_parameter/LocalWindRate = 4.365
 shader_parameter/LocalWindStrength = 0.106
 shader_parameter/PlayerPosition = Vector3(0, 0, 0)
-shader_parameter/fadeOffset = Vector2(20, 20)
+shader_parameter/fadeOffset = Vector2(25, 25)
 shader_parameter/particleSystemOffset = Vector2(0, 0)
 shader_parameter/PlayerDisplacementAmount = 0.5
 shader_parameter/PlayerRadius = 1.0

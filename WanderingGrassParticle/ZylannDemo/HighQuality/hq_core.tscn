@@ -5,10 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://c0bhxlq4w46ms" path="res://WanderingGrassParticle/ZylannDemo/HighQuality/template/hq_core_particle_template.tscn" id="4_g0g8x"]
 [ext_resource type="Material" uid="uid://djc6xrgnewf8j" path="res://WanderingGrassParticle/ZylannDemo/HighQuality/ppm/hqCoreGrassPPM.res" id="7_qbhb3"]
 
-[node name="core" type="Node3D"]
+[node name="core" type="Node3D" node_paths=PackedStringArray("grassParticle")]
 script = ExtResource("1_v1dv4")
 grassParticleTemplate = ExtResource("4_g0g8x")
 grassMaterialTemplate = ExtResource("3_nrisj")
 grassPPM = ExtResource("7_qbhb3")
-fadeDistance = Vector2(28, 28)
+grassParticle = [NodePath("core")]
+grassMaterial = Array[ShaderMaterial]([ExtResource("3_nrisj")])
 grassSpacing = 0.0
+fadeDistance = Vector2(28, 28)

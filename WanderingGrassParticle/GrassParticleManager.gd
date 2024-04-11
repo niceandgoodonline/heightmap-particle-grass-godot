@@ -6,38 +6,39 @@ extends Node3D
 @export var grassMaterialTemplate: ShaderMaterial
 @export var grassPPM: ShaderMaterial
 
-@export_group("Instances")
-@export var isCoreGrass: bool = true
-@export var instanceNumber: int = 0
+@export_group("Generated Objects")
 @export var grassParticle: Array[GPUParticles3D]
 @export var grassMaterial: Array[ShaderMaterial]
 
-@export_group("Tool Functions")
-@export var update_instance_number: bool = false:
-	set(b):
-		_update_instance_number()
+@export_group("Configuration")
+@export var isCoreGrass   : bool = true
+@export var spawnInCircle : bool = true
+@export var instanceNumber: int  = 0
 
-@export var update_sync_origin:bool = false:
-	set(b):
-		syncOrigin = get_parent().syncTarget.global_position
-		_update_sync_origin()
+@export var grassSpacing: float = 102:
+	set(value):
+		grassSpacing = value
+@export var fadeDistance: Vector2 = Vector2(20,20) : 
+	set(value):
+		fadeDistance = value
 @export var syncOrigin: Vector3 = Vector3.ZERO:
 	set(value):
 		syncOrigin = value
 
-@export var update_fade_distance:bool = false:
+@export_group("Tool Functions")
+@export var update_instance_number:bool = false:
 	set(b):
-		_update_fade_distance()
-@export var fadeDistance: Vector2 = Vector2(20,20) : 
-	set(value):
-		fadeDistance = value
-
+		_update_instance_number()
 @export var update_grass_spacing:bool = false:
 	set(b):
 		_update_grass_spacing()
-@export var grassSpacing: float = 102:
-	set(value):
-		grassSpacing = value
+@export var update_fade_distance:bool = false:
+	set(b):
+		_update_fade_distance()
+@export var update_sync_origin:bool = false:
+	set(b):
+		syncOrigin = get_parent().syncTarget.global_position
+		_update_sync_origin()
 
 func set_maps(_height, _normal):
 	grassPPM.set_shader_parameter("heightmap", _height)
@@ -53,7 +54,7 @@ func _update_grass_spacing():
 		var _step: float = _c / instanceNumber
 		var _angle: float = _step
 		
-		grassParticle[index].position = _generate_spawn_point(_angle * index)
+		grassParticle[index].position = _generate_spawn_point(index, _angle)
 		var _v2 = Vector2(grassParticle[index].position.x, grassParticle[index].position.z)
 		grassMaterial[index].set_shader_parameter("ParticleSystemOffset", _v2)
 
@@ -100,16 +101,26 @@ func _remove_grass_particle():
 	grassMaterial.pop_back()
 	_particle.queue_free()
 
-func _generate_spawn_point(angle: float) -> Vector3:
-	var _direction = Vector2(sin(angle), cos(angle) * -1)
-	var _point = Vector3(
-		_direction.x * grassSpacing,
-		0.0,
-		_direction.y * grassSpacing
-		)
+func _generate_spawn_point(index: int, angle: float) -> Vector3:
+	var _point: Vector3
+	if spawnInCircle:
+		var _direction = Vector2(sin(index * angle), cos(index * angle) * -1)
+		_point = Vector3(
+			_direction.x * grassSpacing,
+			0.0,
+			_direction.y * grassSpacing
+			)
+	else:
+		_point = Vector3(
+			originIdentity[index][0] * grassSpacing,
+			0.0,
+			originIdentity[index][1] * grassSpacing,
+
+			)
 	return _point
 
-var origin: float = 102.0
+
+# TODO maybe replace with spiral generation algorith, though honestly fringe usecase imo
 var originIdentity = {
 	0: [-1,-1],
 	1: [0, -1],

@@ -11,3 +11,4 @@ grassParticleTemplate = ExtResource("2_uw3kd")
 grassMaterialTemplate = ExtResource("3_ykpia")
 grassPPM = ExtResource("7_yb1sp")
 isCoreGrass = false
+instanceNumber = 8
